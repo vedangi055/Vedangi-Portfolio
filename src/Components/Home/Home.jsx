@@ -1,7 +1,7 @@
 import React from "react";
 import TextChange from "../TextChange";
 import image from "../../assets/girl-coding.png";
-import resume from '../../assets/Resume.pdf';
+import resume from "../../assets/Resume.pdf";
 
 const Home = () => {
   return (
@@ -18,10 +18,10 @@ const Home = () => {
           me! Lets get started with the introduction, shall we?
         </p>
 
-        <div className="mt-6">
+        <div className="mt-6 flex space-x-4">
           <a
             href="#Footer"
-            className="inline-block bg-gradient-to-r from-blue-900 via-blue-800 to-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out hover:bg-purple-700 hover:shadow-lg"
+            className="sm:w-1/2 md:w-1/3 inline-block bg-gradient-to-r from-blue-900 via-blue-800 to-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out hover:bg-purple-700 hover:shadow-lg text-center"
           >
             Contact Me
           </a>
@@ -29,7 +29,7 @@ const Home = () => {
             href={resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out hover:bg-blue-700 hover:shadow-lg ml-5"
+            className="sm:w-1/2 md:w-1/3 inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out hover:bg-blue-700 hover:shadow-lg ml-5 text-center"
           >
             Download Resume
           </a>

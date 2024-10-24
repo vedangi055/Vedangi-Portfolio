@@ -15,7 +15,7 @@ const About = () => {
 
       <div className="md:flex w-full items-center">
         <img
-          className="md:h-80 md:w-1/3 object-cover rounded-lg"
+          className="md:h-80 md:w-1/3 xs:w-full object-cover rounded-lg"
           src={AboutImg}
           alt="About img"
         />

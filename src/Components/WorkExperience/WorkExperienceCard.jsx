@@ -9,7 +9,7 @@ const WorkExperienceCard = ({
   responsibilities,
 }) => {
   return (
-    <div className="flex gap-10 bg-slate-950 bg-opacity-50 mt-4 rounded-lg p-4 items-center w-1/4">
+    <div className="flex gap-10 bg-slate-950 bg-opacity-50 mt-4 rounded-lg p-4 items-center w-full">
       <div className="flex-shrink-0">
         <FaLaptopCode color={iconColor || "#4285F4"} size={50} />
       </div>
