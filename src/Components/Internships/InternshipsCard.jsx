@@ -9,7 +9,7 @@ const InternshipsCard = ({
   responsibilities 
 }) => {
   return (
-    <div className="flex gap-6 bg-slate-950 bg-opacity-50 mt-4 rounded-lg p-4 items-start w-1/4">
+    <div className="flex gap-6 bg-slate-950 bg-opacity-50 mt-4 rounded-lg p-4 items-start w-full">
       {/* Icon wrapper */}
       <div className="flex-shrink-0">
         <FaLaptop color={iconColor} size={50} />

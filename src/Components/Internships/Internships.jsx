@@ -11,23 +11,23 @@ const Internships = () => {
         INTERNSHIPS
       </h1>
 
-      <div className="flex flex-wrap justify-left gap-8">
+      <div className="flex flex-col md:flex-row justify-left gap-8">
         <InternshipsCard
-          iconColor="#4285F4"
+          iconColor="#DDA0DD"
           internshipTitle="Technical Intern"
           company="Cloud Counselage Pvt Ltd."
           date="Aug 2021 - Sep 2021"
           responsibilities={["Machine Learning Intern"]}
         />
         <InternshipsCard
-          iconColor="#4285F4"
+          iconColor="#9932CC"
           internshipTitle="Technical Intern"
           company="Cloud Counselage Pvt Ltd."
           date="Dec 2020 - Jan 2021"
           responsibilities={["Data Science Intern"]}
         />
         <InternshipsCard
-          iconColor="#4285F4"
+          iconColor="#BA55D3"
           internshipTitle="Mentorship Program"
           company="Persistent Systems Ltd."
           date="Oct 2020 - Nov 2020"
