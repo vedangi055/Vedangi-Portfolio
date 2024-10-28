@@ -3,17 +3,19 @@ import { RiCloseLine, RiMenu2Line } from "@remixicon/react";
 
 const Navbar = () => {
   const [menu, openMenu] = useState(false);
-  const [showMenu, setShowmenu] = useState(true);
+
+  const toggleMenu = () => {
+    openMenu((prev) => !prev);
+  };
 
   return (
     <nav className="flex flex-wrap justify-between md:items-center text-white px-10 pt-6 md:px-20">
-      {/* <span className="text-xl font-bold tracking-wide">Portfolio</span> */}
-      {/* <img src="src/assets/logo.png" className="w-50 h-12" alt="VEDANGI" /> */}
+      <img src="src/assets/logo.png" className="w-50 h-12" alt="VEDANGI" />
 
       <ul
         className={`${
           menu ? "block" : "hidden"
-        } mx-24 p-y2 mt-4 font-semibold md:mt-5 bg-black px-2 rounded-xl bg-opacity-30 md:border-none text-center md:bg-transparent md:static md:mx-0 md:flex gap-6 transition-all duration-300 ease-in-out`}
+        } mx-30 mt-10 p-y2 font-semibold md:mt-5 px-2 rounded-xl md:border-none md:bg-transparent bg-sky-200 bg-opacity-40 text-center md:static md:mx-0 md:flex gap-6 md:space-y-0 space-y-5 transition-all duration-300 ease-in-out`}
       >
         <li>
           <a
@@ -26,7 +28,6 @@ const Navbar = () => {
 
         <li className="relative group">
           <a
-            // href="#Experience"
             className="bg-gray-800 bg-opacity-20 p-2 rounded-md transition duration-300 ease-in-out hover:shadow-lg hover:shadow-orange-100"
           >
             Experience
@@ -70,20 +71,17 @@ const Navbar = () => {
         </li>
       </ul>
 
-      {showMenu ? (
-        <RiMenu2Line
-          size={30}
-          className="md:hidden absolute right-10 top-6 transition-all duration-300"
-          onClick={() => {
-            openMenu(!menu);
-            setShowmenu(!showMenu);
-          }}
-        />
-      ) : (
+      {menu ? (
         <RiCloseLine
           size={30}
           className="md:hidden absolute right-10 top-6 transition-all duration-300"
-          onClick={() => setShowmenu(!showMenu)}
+          onClick={toggleMenu}
+        />
+      ) : (
+        <RiMenu2Line
+          size={30}
+          className="md:hidden absolute right-10 top-6 transition-all duration-300"
+          onClick={toggleMenu}
         />
       )}
     </nav>
