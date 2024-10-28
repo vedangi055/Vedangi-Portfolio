@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div
       id="About"
-      className="text-white md:flex bg-black shadow-xl mx-0 md:mx-20 bg-opacity-30 rounded-lg p-12"
+      className="text-white md:flex bg-black shadow-xl mx-0 md:mx-10 bg-opacity-30 rounded-lg p-12"
     >
       <div className="flex">
         <h2 className="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-100 to-blue-300 mt-6 mb-4 w-full font-sans hover:text-sky-800 duration-100 hover:drop-shadow-[0_0_25px_rgba(0,191,255,1.5)]">
@@ -15,7 +15,7 @@ const About = () => {
 
       <div className="md:flex w-full items-center">
         <img
-          className="md:h-80 md:w-1/3 xs:w-full object-cover rounded-lg"
+          className="h-72 md:h-80 md:w-1/3 w-full object-cover rounded-lg"
           src={AboutImg}
           alt="About img"
         />
