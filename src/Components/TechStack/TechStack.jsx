@@ -166,15 +166,6 @@ const TechStack = () => {
             )}
           </div>
 
-          {/* <span className="p-3 bg-zinc-950 flex items-center rounded-2xl">
-            <FaFigma color="#F24E1E" size={50} />
-          </span> */}
-          {/* <span className="p-3 bg-zinc-950 flex items-center rounded-2xl">
-            <SiMongodb color="#47A248" size={50} />
-          </span>
-          <span className="p-3 bg-zinc-950 flex items-center rounded-2xl">
-            <SiRedis color="#FF4438" size={50} />
-          </span> */}
         </div>
       </div>
     </div>
