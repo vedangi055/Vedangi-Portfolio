@@ -1,1 +1,1 @@
-# Vedangi-Portfolio
+I built a portfolio project using React.js, Tailwind CSS, and Vite.js to highlight my skills and projects. React helped me create a flexible structure that's easy to update, while Tailwind CSS made it simple to style the site with a clean, modern look. Vite.js improved the development speed and made the app run faster. This project showcases my technical skills and design sense, making it a great way to present my work to employers.
