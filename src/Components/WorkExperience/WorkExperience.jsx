@@ -17,7 +17,7 @@ const WorkExperience = () => {
           company="Goa Electronics Ltd."
           date="Jun 2023 - Present"
           responsibilities={[
-            "Tech Stack: React.js, JavaScript, HTML, CSS, ASP.NET",
+            "Tech Stack: React.js, JavaScript, HTML, CSS, ASP.NET, Power BI",
           ]}
         />
         <WorkExperienceCard

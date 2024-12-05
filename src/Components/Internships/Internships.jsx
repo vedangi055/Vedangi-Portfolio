@@ -17,14 +17,19 @@ const Internships = () => {
           internshipTitle="Technical Intern"
           company="Cloud Counselage Pvt Ltd."
           date="Aug 2021 - Sep 2021"
-          responsibilities={["Machine Learning Intern"]}
+          responsibilities={[
+            "Developed a Movie Recommendation Model using item-based collaborative filtering, integrating various machine learning techniques to enhance recommendations based on user ratings.",
+          ]}
         />
         <InternshipsCard
           iconColor="#9932CC"
           internshipTitle="Technical Intern"
           company="Cloud Counselage Pvt Ltd."
           date="Dec 2020 - Jan 2021"
-          responsibilities={["Data Science Intern"]}
+          responsibilities={[
+            "Created an algorithm designed to effectively clean any dataset provided",
+            "Explored various data cleaning techniques, understanding their applications and importance in preparing datasets.",
+          ]}
         />
         <InternshipsCard
           iconColor="#BA55D3"
@@ -32,8 +37,7 @@ const Internships = () => {
           company="Persistent Systems Ltd."
           date="Oct 2020 - Nov 2020"
           responsibilities={[
-            "Privacy Preserving AI Techniques",
-            "Building privacy preserving machine learning models using differential privacy ",
+            "Built privacy-preserving machine learning models using differential privacy, including a Skin Cancer Classifier with PATE. Studied PATE and Membership Inference Attacks, and evaluated models for privacy risks.",
           ]}
         />
       </div>

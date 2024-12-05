@@ -7,15 +7,17 @@ const Footer = () => {
   return (
     <div
       id="Footer"
-      className="flex justify-around bg-sky-900 text-white p-10 md:p-12 items-center justify-center"
+      className="flex flex-wrap md:flex-nowrap justify-between bg-sky-900 text-white p-10 md:p-12 items-center"
     >
-      <div>
-        <h1 className="text-base md:text-3xl font-bold mb-2 text-left mr-20 hover:text-sky-200">
+      {/* Contact Me heading */}
+      <div className="mb-4 md:mb-0">
+        <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 text-left hover:text-sky-200">
           Contact Me!
         </h1>
       </div>
 
-      <ul className="text-sm md:text-xl flex gap-10">
+      {/* Social Media Icons */}
+      <ul className="text-sm md:text-xl flex gap-6 md:gap-10 justify-center flex-wrap md:flex-nowrap">
         <li className="flex items-center">
           <a
             href="mailto:vedangibarve27@gmail.com"
@@ -34,7 +36,7 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             <div className="w-12 h-12 flex items-center justify-center rounded-full text-white border-2 border-white hover:text-sky-600">
-            <CiLinkedin size={30} />
+              <CiLinkedin size={30} />
             </div>
           </a>
         </li>
@@ -46,7 +48,7 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             <div className="w-12 h-12 flex items-center justify-center rounded-full text-white border-2 border-white hover:text-gray-500">
-            <FaGithub size={30} />
+              <FaGithub size={30} />
             </div>
           </a>
         </li>
