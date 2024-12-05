@@ -1,8 +1,11 @@
 import React from "react";
-import CertificationsCard from '../Certifications/CertificationsCard';
+import CertificationsCard from "../Certifications/CertificationsCard";
 const Certifications = () => {
   return (
-    <div id="Certifications" className="p-10 md:p-20 bg-blue-600 shadow-xl mx-0 md:mx-20 bg-opacity-30 rounded-lg p-12 mt-10">
+    <div
+      id="Certifications"
+      className="p-10 md:p-20 bg-blue-600 shadow-xl mx-0 md:mx-20 bg-opacity-30 rounded-lg p-12 mt-10"
+    >
       <h1 className="text-2xl md:text-4xl text-white font-bold font-mono mb-6 hover:text-sky-800 duration-100 hover:drop-shadow-[0_0_25px_rgba(0,191,255,1.5)]">
         CERTIFICATIONS
       </h1>
@@ -26,6 +29,24 @@ const Certifications = () => {
           source="Udemy"
           certificateLink="https://www.udemy.com/certificate/UC-a1e22f85-99bb-4e25-98b8-f07189049a6d/"
           iconColor="#FBBF24"
+        />
+        <CertificationsCard
+          title="Analyzing and Visualizing Data with Microsoft Power BI"
+          source="Great Learning"
+          certificateLink="https://olympus.mygreatlearning.com/courses/30824/certificate?pb_id=581"
+          iconColor="#34D399"
+        />
+        <CertificationsCard
+          title="JavaScript (Basic)"
+          source="HackerRank"
+          certificateLink="https://www.hackerrank.com/certificates/8304b2ae87bf"
+          iconColor="#34D399"
+        />
+        <CertificationsCard
+          title="React.js (Basic)"
+          source="HackerRank"
+          certificateLink="https://www.hackerrank.com/certificates/b8cd7f452ed1"
+          iconColor="#4285F4"
         />
         <CertificationsCard
           title="A Gentle Introduction to ASP.NET"
