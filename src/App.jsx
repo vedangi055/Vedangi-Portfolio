@@ -12,7 +12,6 @@ import TechStack from "./Components/TechStack/TechStack";
 function App() {
   return (
     <div className="background h-auto w-full overflow-hidden">
-      <h2>Heloooooooooooooooo!!!!!!!!!!</h2>
       <Navbar />
       <Home />
       <About />
