@@ -1,12 +1,13 @@
-import React from 'react';
-import { FaLaptop } from 'react-icons/fa';
+import React from "react";
+import { FaLaptop } from "react-icons/fa";
 
-const InternshipsCard = ({ 
-  iconColor, 
-  internshipTitle, 
-  company, 
-  date, 
-  responsibilities 
+const InternshipsCard = ({
+  iconColor,
+  internshipTitle,
+  company,
+  date,
+  certificateLink,
+  responsibilities,
 }) => {
   return (
     <div className="flex gap-6 bg-slate-950 bg-opacity-50 mt-4 rounded-lg p-4 items-start w-full">
@@ -25,6 +26,14 @@ const InternshipsCard = ({
             <li key={index}>- {item}</li>
           ))}
         </ul>
+        <a
+          href={certificateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-400 underline"
+        >
+          Certificate
+        </a>
       </div>
     </div>
   );

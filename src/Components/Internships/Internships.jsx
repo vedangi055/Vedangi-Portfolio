@@ -1,5 +1,8 @@
 import React from "react";
 import InternshipsCard from "./InternshipsCard";
+import cert1 from "../../assets/CCPart.pdf";
+import cert2 from "../../assets/CCExp.pdf";
+import cert3 from "../../assets/PSL.pdf";
 
 const Internships = () => {
   return (
@@ -20,6 +23,7 @@ const Internships = () => {
           responsibilities={[
             "Developed a Movie Recommendation Model using item-based collaborative filtering, integrating various machine learning techniques to enhance recommendations based on user ratings.",
           ]}
+          certificateLink={cert1}
         />
         <InternshipsCard
           iconColor="#9932CC"
@@ -30,6 +34,7 @@ const Internships = () => {
             "Created an algorithm designed to effectively clean any dataset provided",
             "Explored various data cleaning techniques, understanding their applications and importance in preparing datasets.",
           ]}
+          certificateLink={cert2}
         />
         <InternshipsCard
           iconColor="#BA55D3"
@@ -39,6 +44,7 @@ const Internships = () => {
           responsibilities={[
             "Built privacy-preserving machine learning models using differential privacy, including a Skin Cancer Classifier with PATE. Studied PATE and Membership Inference Attacks, and evaluated models for privacy risks.",
           ]}
+          certificateLink={cert3}
         />
       </div>
     </div>

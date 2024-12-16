@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FiLoader } from "react-icons/fi";
 
 const Navbar = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -8,7 +9,8 @@ const Navbar = () => {
 
   return (
     <nav className="flex flex-wrap justify-between md:items-center text-white px-10 pt-6 md:px-20">
-      <img src="src/assets/logo.png" className="w-16 h-12" alt="VEDANGI" />
+      {/* <img src="src/assets/logo.png" className="w-16 h-12" alt="VEDANGI" /> */}
+      <FiLoader className="w-8 h-8 text-white" />
 
       {/* Hamburger Icon for small screens */}
       <button
@@ -54,7 +56,7 @@ const Navbar = () => {
       <ul
         className={`${
           isMenuOpen ? "block" : "hidden"
-        } md:flex flex-wrap gap-6 md:space-y-0 space-y-5 md:static md:mx-0 md:px-0 transition-all duration-300 ease-in-out absolute top-20 right-5 bg-gray-800 bg-opacity-50 rounded-md shadow-lg z-10 py-3 px-2`}
+        } md:flex flex-wrap gap-6 md:space-y-0 space-y-5 md:static md:mx-0 md:px-0 transition-all duration-300 ease-in-out absolute top-20 right-5 bg-gray-800 md:bg-transparent bg-opacity-50 md:bg-opacity-0 rounded-md shadow-lg z-10 py-3 px-2`}
       >
         <li>
           <a

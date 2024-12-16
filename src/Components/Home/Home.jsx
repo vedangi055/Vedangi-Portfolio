@@ -12,10 +12,9 @@ const Home = () => {
         </h1>
         <p
           className="text-sm md:text-2xl tracking-tight"
-          style={{ marginTop: "10px", fontFamily: "serif" }}
+          style={{ marginTop: "10px", fontFamily: "serif", color: "darkslateblue" }}
         >
-          This is my portfolio which will display quite some information about
-          me! Lets get started with the introduction, shall we?
+          Thank you for visiting! This portfolio highlights my work, skills, and experience. Feel free to explore and connect with me for any opportunities or collaborations!
         </p>
 
         <div className="mt-6 flex space-x-4">
