@@ -1,5 +1,7 @@
 import React from "react";
 import WorkExperienceCard from "./WorkExperienceCard";
+import cert1 from "../../assets/Coditas.pdf";
+import cert2 from "../../assets/GEL.pdf";
 
 const WorkExperience = () => {
   return (
@@ -19,6 +21,7 @@ const WorkExperience = () => {
           responsibilities={[
             "Tech Stack: React.js, JavaScript, HTML, CSS, ASP.NET, Power BI",
           ]}
+          certificateLink={cert2}
         />
         <WorkExperienceCard
           iconColor="#FFD700"
@@ -28,6 +31,7 @@ const WorkExperience = () => {
           responsibilities={[
             "Tech Stack: Node.js, JavaScript, Express.js, MongoDB",
           ]}
+          certificateLink={cert1}
         />
       </div>
     </div>

@@ -7,6 +7,7 @@ const WorkExperienceCard = ({
   company,
   date,
   responsibilities,
+  certificateLink
 }) => {
   return (
     <div className="flex gap-10 bg-slate-950 bg-opacity-50 mt-4 rounded-lg p-4 items-center w-full">
@@ -22,6 +23,14 @@ const WorkExperienceCard = ({
             <li key={index}>- {item}</li>
           ))}
         </ul>
+        <a
+          href={certificateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-400 underline"
+        >
+          Certificate
+        </a>
       </span>
     </div>
   );
