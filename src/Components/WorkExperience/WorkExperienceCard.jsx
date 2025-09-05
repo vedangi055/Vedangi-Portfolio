@@ -7,31 +7,44 @@ const WorkExperienceCard = ({
   company,
   date,
   responsibilities,
-  certificateLink
+  certificateLink,
 }) => {
   return (
-    <div className="flex gap-10 bg-slate-950 bg-opacity-50 mt-4 rounded-lg p-4 items-center w-full">
-      <div className="flex-shrink-0">
-        <FaLaptopCode color={iconColor || "#4285F4"} size={50} />
+    <div
+      className="flex flex-col md:flex-row gap-6 md:gap-10 h-auto bg-slate-950 bg-opacity-60 mt-4 
+                 rounded-xl p-6 items-start w-full 
+                 hover:bg-slate-900 hover:bg-opacity-80 hover:scale-105 
+                 transition-all duration-300 shadow-md hover:shadow-lg"
+    >
+      {/* Icon Section */}
+      <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-slate-800 shadow-md">
+        <FaLaptopCode color={iconColor || "#4285F4"} size={30} />
       </div>
-      <span className="text-white">
-        <h1 className="leading-tight text-bold text-xl">{jobTitle}</h1>
-        <h3 className="leading-tight font-thin text-bold mb-2">{company}</h3>
-        <p className="text-sm leading-tight font-thin">{date}</p>
-        <ul className="text-sm p-2">
+
+      {/* Content Section */}
+      <div className="text-white w-full">
+        <h1 className="font-bold text-lg md:text-xl">{jobTitle}</h1>
+        <h3 className="text-sky-300 font-medium mb-1">{company}</h3>
+        <p className="text-gray-400 text-sm mb-3">{date}</p>
+
+        <ul className="text-sm list-disc list-inside space-y-1 text-gray-200 mb-3">
           {responsibilities.map((item, index) => (
-            <li key={index}>- {item}</li>
+            <li key={index}>{item}</li>
           ))}
         </ul>
-        <a
-          href={certificateLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-400 underline"
-        >
-          Certificate
-        </a>
-      </span>
+
+        {certificateLink && (
+          <a
+            href={certificateLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block mt-2 px-3 py-1 bg-blue-600 text-white rounded-md 
+                       hover:bg-blue-500 transition-colors duration-300 shadow-sm"
+          >
+            View Certificate
+          </a>
+        )}
+      </div>
     </div>
   );
 };

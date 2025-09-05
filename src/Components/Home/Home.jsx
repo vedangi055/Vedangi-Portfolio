@@ -14,7 +14,8 @@ const Home = () => {
           className="text-sm md:text-2xl tracking-tight"
           style={{ marginTop: "10px", fontFamily: "serif", color: "darkslateblue" }}
         >
-          Thank you for visiting! This portfolio highlights my work, skills, and experience. Feel free to explore and connect with me for any opportunities or collaborations!
+          Thanks for stopping by! 
+          This portfolio is a glimpse into my work, skills, and interests. I’d love to connect, collaborate, or discuss new opportunities---always open to learning and sharing ideas.
         </p>
 
         <div className="mt-6 flex space-x-4">

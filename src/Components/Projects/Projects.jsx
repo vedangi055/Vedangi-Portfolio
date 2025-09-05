@@ -10,7 +10,7 @@ const Projects = () => {
       id="Projects"
       className="p-10 md:p-20 text-white bg-blue-400 shadow-xl mx-0 md:mx-20 bg-opacity-50 rounded-lg mt-10 mb-20"
     >
-      <h1 className="text-2xl md:text-4xl text-white font-bold font-mono hover:text-sky-800 duration-100 hover:drop-shadow-[0_0_25px_rgba(0,191,255,1.5)]">
+      <h1 className="text-2xl md:text-4xl text-green-200 font-bold font-mono hover:text-sky-800 duration-100 hover:drop-shadow-[0_0_25px_rgba(0,191,255,1.5)]">
         PROJECTS
       </h1>
       <div className="py-12 px-8 flex flex-wrap gap-5 justify-between">
@@ -25,9 +25,10 @@ const Projects = () => {
         <div className="flex-1 min-w-[250px] flex">
           <ProjectCard
             title="Task Management System"
-            main="Developed a REST API in MERN Stack for task management, featuring endpoints for creating, retrieving, updating, and deleting tasks. Built with Node.js and Express.js, it uses MongoDB for data storage and MongoDB Compass for management, providing a full-stack solution."
+            main="Built a full-stack Task Management REST API using the MERN stack, featuring endpoints for creating, retrieving, updating, and deleting tasks. 
+            Implemented backend with Node.js & Express.js, and optimized data storage and management using MongoDB and MongoDB Compass."
             imgSrc={taskImg}
-            sourceCode="https://github.com/vedangi055/Task-Management-API"
+            // sourceCode="https://github.com/vedangi055/Task-Management-API"
           />
         </div>
         <div className="flex-1 min-w-[250px] flex">

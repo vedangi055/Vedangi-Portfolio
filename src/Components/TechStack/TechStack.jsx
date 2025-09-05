@@ -55,6 +55,21 @@ const MongoDBIcon = () => (
   </svg>
 );
 
+const PowerBIIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 48 48"
+    width="50"
+    height="50"
+  >
+    <path fill="#f2c811" d="M5 9h38v30H5z" />
+    <path
+      fill="#fff"
+      d="M13 17h3v14h-3zM19 14h3v20h-3zM25 20h3v10h-3zM31 12h3v24h-3z"
+    />
+  </svg>
+);
+
 const TechStack = () => {
   const [hoveredIcon, setHoveredIcon] = useState(null);
 
@@ -70,8 +85,8 @@ const TechStack = () => {
       id="TechStack"
       className="p-10 md:p-20 bg-blue-400 shadow-xl mx-0 md:mx-20 bg-opacity-50 rounded-lg p-12 mt-10"
     >
-      <h1 className="text-2xl md:text-4xl text-white font-bold font-mono mb-6 hover:text-sky-800 duration-100 hover:drop-shadow-[0_0_25px_rgba(0,191,255,1.5)]">
-        TECHONOLOGIES
+      <h1 className="text-2xl md:text-4xl text-green-200 font-bold font-sans mb-6 hover:text-sky-800 duration-100 hover:drop-shadow-[0_0_25px_rgba(0,191,255,1.5)]">
+        TECH STACK / LANGUAGES
       </h1>
       <div className="flex flex-wrap items-center justify-around">
         <div className="flex flex-wrap gap-10">
@@ -151,7 +166,7 @@ const TechStack = () => {
             )}
           </div>
 
-          <div
+          {/* <div
             className="relative"
             onMouseEnter={() => handleMouseEnter("MongoDB")}
             onMouseLeave={handleMouseLeave}
@@ -164,8 +179,22 @@ const TechStack = () => {
                 MongoDB
               </span>
             )}
-          </div>
+          </div> */}
 
+          <div
+            className="relative"
+            onMouseEnter={() => handleMouseEnter("PowerBI")}
+            onMouseLeave={handleMouseLeave}
+          >
+            <span className="p-3 bg-gray-300 flex items-center rounded-2xl shadow-2xl hover:bg-yellow-600 transition-all duration-300">
+              <PowerBIIcon />
+            </span>
+            {hoveredIcon === "PowerBI" && (
+              <span className="absolute top-20 left-1/2 transform -translate-x-1/2 text-white">
+                Power BI
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </div>

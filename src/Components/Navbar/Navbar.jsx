@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FiLoader } from "react-icons/fi";
+import { FaSnowflake } from "react-icons/fa";
 
 const Navbar = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav className="flex flex-wrap justify-between md:items-center text-white px-10 pt-6 md:px-20">
       {/* <img src="src/assets/logo.png" className="w-16 h-12" alt="VEDANGI" /> */}
-      <FiLoader className="w-8 h-8 text-white" />
+      <FaSnowflake className="w-8 h-8 text-white" />
 
       {/* Hamburger Icon for small screens */}
       <button
