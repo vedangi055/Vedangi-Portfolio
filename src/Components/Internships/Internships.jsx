@@ -14,7 +14,7 @@ const Internships = () => {
         INTERNSHIPS
       </h1>
 
-      <div className="flex flex-col md:flex-row justify-left gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <InternshipsCard
           iconColor="#DDA0DD"
           internshipTitle="Machine Learning Intern"

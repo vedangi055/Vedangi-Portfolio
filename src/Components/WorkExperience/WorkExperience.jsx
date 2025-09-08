@@ -25,6 +25,7 @@ const WorkExperience = () => {
             "Created Bhumija (React.js) for ore management and tripsheet automation.",
             "Designed CM Dashboard in Power BI with advanced DAX and database integration for scheme monitoring.",
           ]}
+          certificateLink={cert2}
         />
         <WorkExperienceCard
           iconColor="#FFD700"

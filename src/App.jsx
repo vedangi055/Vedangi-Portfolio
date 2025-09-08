@@ -8,9 +8,11 @@ import Projects from "./Components/Projects/Projects";
 import WorkExperience from "./Components/WorkExperience/WorkExperience";
 import "../src/style.css";
 import TechStack from "./Components/TechStack/TechStack";
+import BackToTopButton from "./Components/BackToTopButton/BackToTopButton";
 
 function App() {
   return (
+    <>
     <div className="background h-auto w-full overflow-hidden">
       <Navbar />
       <Home />
@@ -22,6 +24,8 @@ function App() {
       <Projects />
       <Footer />
     </div>
+    <BackToTopButton />
+    </>
   );
 }
 

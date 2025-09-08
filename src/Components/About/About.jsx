@@ -28,10 +28,11 @@ const About = () => {
              shadow-[0_0_15px_rgba(56,189,248,0.4)] 
              hover:scale-105 transition-transform duration-300"
         src={AboutImg}
-        alt="About img"
+        alt="Vedangi - Frontend Developer from Goa"
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.8 }}
+        loading="lazy"
       />
 
       {/* Text Content */}
