@@ -52,11 +52,30 @@ const InternshipsCard = ({
           href={certificateLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block text-sm px-4 py-1.5 rounded-md 
-          bg-gradient-to-r from-purple-500 to-indigo-500 text-white 
-          hover:opacity-90 transition-all duration-300"
+          className="
+  relative inline-flex items-center gap-1 text-sm px-4 py-1.5 rounded-md
+  bg-white/10 dark:bg-white/5 backdrop-blur-lg
+  border border-gray-300 dark:border-white/10
+  text-gray-800 dark:text-white
+  overflow-hidden
+  transition-all duration-300
+  hover:scale-105 hover:border-purple-400/40
+  hover:shadow-[0_0_15px_rgba(168,85,247,0.25)]
+  "
         >
-          View Certificate →
+          <span className="relative z-10">View Certificate</span>
+
+          {/* subtle glow */}
+          <span
+            className="
+    absolute inset-0 opacity-0
+    bg-gradient-to-r from-purple-500/20 to-indigo-500/20
+    transition-opacity duration-300
+    hover:opacity-100
+    "
+          ></span>
+
+          <span className="relative z-10">→</span>
         </a>
       )}
     </div>

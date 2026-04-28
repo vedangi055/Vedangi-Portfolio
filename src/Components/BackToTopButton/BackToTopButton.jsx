@@ -5,14 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const BackToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button after scrolling 300px
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(window.scrollY > 300);
     };
 
     window.addEventListener("scroll", toggleVisibility);
@@ -28,13 +23,24 @@ const BackToTopButton = () => {
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          transition={{ duration: 0.3 }}
-          className="fixed bottom-6 right-6 p-3 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white shadow-lg hover:scale-110 transition-transform duration-300 animate-pulse"
+          initial={{ opacity: 0, y: 20, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 20, scale: 0.9 }}
+          transition={{ duration: 0.25 }}
+          className="
+          fixed bottom-6 right-6 z-50
+          p-3 rounded-full
+          bg-white/10 dark:bg-white/5
+          backdrop-blur-lg
+          border border-gray-300 dark:border-white/10
+          text-gray-800 dark:text-white
+          shadow-md
+          hover:scale-105 hover:border-sky-400/40 
+          hover:shadow-[0_0_15px_rgba(56,189,248,0.3)]
+          transition-all duration-300
+          "
         >
-          <FaArrowUp className="w-5 h-5" />
+          <FaArrowUp className="w-4 h-4" />
         </motion.button>
       )}
     </AnimatePresence>

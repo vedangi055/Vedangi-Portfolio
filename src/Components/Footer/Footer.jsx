@@ -27,7 +27,7 @@ const Footer = () => {
         {/* Social Icons */}
         <div className="flex gap-6">
           <a
-            href="mailto:vedangibarve27@gmail.com"
+            href="mailto:vedangibarve.work@gmail.com"
             className="group w-12 h-12 flex items-center justify-center 
             rounded-full bg-white/5 border border-white/10 
             hover:bg-white/10 hover:border-sky-400/40 

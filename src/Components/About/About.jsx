@@ -97,13 +97,30 @@ const About = () => {
           <div className="pt-4">
             <a
               href="#Footer"
-              className="inline-block px-6 py-2.5 rounded-full 
-              bg-gradient-to-r from-purple-500 to-sky-500 
-              text-white font-medium shadow-md 
-              hover:scale-105 hover:shadow-purple-500/30 
-              transition-all duration-300"
+              className="
+    relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full
+    bg-white/10 dark:bg-white/5 backdrop-blur-lg
+    border border-gray-300 dark:border-white/10
+    text-gray-900 dark:text-white font-medium
+    overflow-hidden
+    transition-all duration-300
+    hover:scale-105 hover:border-sky-400/40
+    hover:shadow-[0_0_20px_rgba(56,189,248,0.25)]
+    "
             >
-              Let’s Connect →
+              <span className="relative z-10">Let’s Connect</span>
+
+              {/* Subtle glow layer */}
+              <span
+                className="
+      absolute inset-0 opacity-0 
+      bg-gradient-to-r from-purple-500/20 to-sky-500/20
+      transition-opacity duration-300
+      hover:opacity-100
+      "
+              ></span>
+
+              <span className="relative z-10">→</span>
             </a>
           </div>
         </motion.div>
