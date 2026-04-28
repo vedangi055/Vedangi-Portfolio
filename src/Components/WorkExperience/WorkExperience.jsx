@@ -4,44 +4,52 @@ import cert1 from "../../assets/Coditas.pdf";
 import cert2 from "../../assets/GEL.pdf";
 
 const WorkExperience = () => {
+  const experiences = [
+    {
+      iconColor: "#FFFACD",
+      jobTitle: "Trainee Software Engineer",
+      company: "Goa Electronics Ltd., Goa",
+      date: "Jun 2023 - Present",
+      responsibilities: [
+        "Coordinated with cross-functional teams to gather and refine requirements.",
+        "Led and developed a Call Center Management system using React.js, improving agent workflow efficiency by ~30%.",
+        "Developed GelJira for ticketing, task management, leave requests, and attendance tracking.",
+        "Developed Bhumija (React.js) for ore management and tripsheet automation.",
+        "Designed CM Dashboard in Power BI with advanced DAX and database integration for scheme monitoring.",
+      ],
+      // certificateLink: cert2,
+    },
+    {
+      iconColor: "#FFD700",
+      jobTitle: "Associate Software Engineer",
+      company: "Coditas Solutions LLP, Pune",
+      date: "Sept 2022 - Dec 2022",
+      responsibilities: [
+        "Learned Node.js and JavaScript through self-study and practical projects.",
+        "Designed Task Management System enabling task tracking through CRUD APIs with backend data management.",
+        "Built dynamic REST APIs using Node.js and Express.js.",
+        "Validated and debugged REST APIs using Postman, reducing integration issues during development.",
+      ],
+      // certificateLink: cert1,
+    },
+  ];
   return (
-    <div
+    <section
       id="WorkExperience"
-      className="p-10 md:p-20 bg-blue-400 shadow-xl mx-0 md:mx-20 bg-opacity-50 rounded-lg p-12 mt-10"
+      className="relative py-16 px-6 md:px-20 bg-gradient-to-b from-slate-950 via-slate-900 to-black"
     >
-      <h1 className="text-2xl md:text-4xl text-green-200 font-bold font-mono mb-6 hover:text-sky-800 duration-100 hover:drop-shadow-[0_0_25px_rgba(0,191,255,1.5)]">
-        WORK EXPERIENCE
+      {/* Section Heading */}
+      <h1 className="text-3xl md:text-5xl font-bold text-white mb-12 tracking-wide">
+        Work Experience
       </h1>
-      <div className="flex flex-col md:flex-row justify-left gap-8">
-        <WorkExperienceCard
-          iconColor="#FFFACD"
-          jobTitle="Trainee Software Engineer"
-          company="Goa Electronics Ltd."
-          date="Jun 2023 - Present"
-          responsibilities={[
-            "Designed and deployed full-stack software solutions.",
-            "Built Call Center Management (React.js) for calls, customer support, and workflows.",
-            "Developed GelJira for ticketing, task management, leave requests, and attendance tracking.",
-            "Created Bhumija (React.js) for ore management and tripsheet automation.",
-            "Designed CM Dashboard in Power BI with advanced DAX and database integration for scheme monitoring.",
-          ]}
-          certificateLink={cert2}
-        />
-        <WorkExperienceCard
-          iconColor="#FFD700"
-          jobTitle="Associate Software Engineer"
-          company="Coditas Solutions LLP, Pune"
-          date="Sept 2022 - Dec 2022"
-          responsibilities={[
-            "Learned Node.js and JavaScript through self-study and practical projects.",
-            "Designed Task Management System enabling task tracking through CRUD APIs with backend data management.",
-            "Built dynamic REST APIs using Node.js and Express.js.",
-            "Tested and validated APIs using Postman.",
-          ]}          
-          certificateLink={cert1}
-        />
+
+      {/* Timeline Line */}
+      <div className="relative border-l border-slate-700 pl-6 space-y-10">
+        {experiences.map((exp, index) => (
+          <WorkExperienceCard key={index} {...exp} />
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 

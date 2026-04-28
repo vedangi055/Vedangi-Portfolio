@@ -1,41 +1,33 @@
 import React from "react";
-import { FaLaptopCode } from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
-export const CertificationsCard = ({
-  title,
-  source,
-  certificateLink,
-  iconColor,
-}) => {
+const CertificationsCard = ({ title, source, link }) => {
   return (
     <div
-      className="flex flex-col md:flex-row gap-6 bg-slate-950 bg-opacity-60 mt-4 rounded-xl p-6 
-                 items-start w-full md:w-4/5 lg:w-3/4 mx-auto
-                 hover:bg-slate-900 hover:bg-opacity-80 hover:scale-105 
-                 transition-all duration-300 shadow-md hover:shadow-lg"
+      className="min-w-[260px] max-w-[280px] p-5 rounded-xl 
+      bg-white/5 backdrop-blur-lg border border-white/10 
+      hover:bg-white/10 hover:border-sky-400/40 
+      transition-all duration-300 
+      hover:shadow-[0_0_20px_rgba(56,189,248,0.2)]"
     >
-      {/* Icon Section */}
-      <div className="flex-shrink-0 w-16 h-16 flex items-center justify-center rounded-full bg-slate-800 shadow-md">
-        <FaLaptopCode color={iconColor || "#4285F4"} size={30} />
-      </div>
+      {/* Title */}
+      <h3 className="text-sm font-semibold text-white mb-2 line-clamp-2">
+        {title}
+      </h3>
 
-      {/* Text Section */}
-      <div className="flex flex-col flex-grow text-white">
-        <h3 className="text-lg md:text-xl font-bold">{title}</h3>
-        <p className="text-sky-300 font-medium mb-2">Source: {source}</p>
+      {/* Source */}
+      <p className="text-xs text-sky-400 mb-4">{source}</p>
 
-        {certificateLink && (
-          <a
-            href={certificateLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-2 px-3 py-1 bg-blue-600 text-white rounded-md 
-                       hover:bg-blue-500 transition-colors duration-300 shadow-sm"
-          >
-            View Certificate
-          </a>
-        )}
-      </div>
+      {/* CTA */}
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-2 text-xs text-white 
+        hover:text-sky-400 transition duration-300"
+      >
+        View Certificate <FaExternalLinkAlt size={10} />
+      </a>
     </div>
   );
 };

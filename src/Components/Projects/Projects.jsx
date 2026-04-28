@@ -5,41 +5,50 @@ import taskImg from "../../assets/task-management-system.jpeg";
 import portfolioImg from "../../assets/portfolio.jpeg";
 
 const Projects = () => {
+  const projects = [
+    {
+      title: "Digital Health Passport (Blockchain)",
+      description:
+        "Built a secure health passport using Hyperledger Fabric to store verifiable medical data with privacy and traceability.",
+      image: covidImg,
+      techStack: ["Blockchain", "Hyperledger", "Security"],
+      liveLink:
+        "https://www.ijraset.com/best-journal/digital-health-passport-using-blockchain",
+    },
+    {
+      title: "Task Management System",
+      description:
+        "Developed a full-stack REST API with CRUD operations using Node.js, Express, and MongoDB for efficient task tracking.",
+      image: taskImg,
+      techStack: ["Node.js", "Express.js", "MongoDB"],
+      github: "https://github.com/vedangi055/Task-Management-API",
+    },
+    {
+      title: "Portfolio Website",
+      description:
+        "Designed and developed a modern, responsive portfolio using React.js with smooth UI and optimized performance.",
+      image: portfolioImg,
+      techStack: ["React.js", "Tailwind CSS"],
+    },
+  ];
+
   return (
-    <div
+    <section
       id="Projects"
-      className="p-10 md:p-20 text-white bg-blue-400 shadow-xl mx-0 md:mx-20 bg-opacity-50 rounded-lg mt-10 mb-20"
+      className="py-16 px-6 md:px-20 bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white"
     >
-      <h1 className="text-2xl md:text-4xl text-green-200 font-bold font-mono hover:text-sky-800 duration-100 hover:drop-shadow-[0_0_25px_rgba(0,191,255,1.5)]">
-        PROJECTS
+      {/* Heading */}
+      <h1 className="text-3xl md:text-5xl font-bold mb-12">
+        Projects
       </h1>
-      <div className="py-12 px-8 flex flex-wrap gap-5 justify-between">
-        <div className="flex-1 min-w-[250px] flex">
-          <ProjectCard
-            title="Covid Health Passport Using Blockchain"
-            main="The project aims to create a digital health passport using Hyperledger Fabric blockchain to securely store verifiable data. It focuses on preserving privacy and data sovereignty while ensuring transparency and traceability."
-            imgSrc={covidImg}
-            publicationLink="https://www.ijraset.com/best-journal/digital-health-passport-using-blockchain"
-          />
-        </div>
-        <div className="flex-1 min-w-[250px] flex">
-          <ProjectCard
-            title="Task Management System"
-            main="Built a full-stack Task Management REST API using the MERN stack, featuring endpoints for creating, retrieving, updating, and deleting tasks. 
-            Implemented backend with Node.js & Express.js, and optimized data storage and management using MongoDB and MongoDB Compass."
-            imgSrc={taskImg}
-            // sourceCode="https://github.com/vedangi055/Task-Management-API"
-          />
-        </div>
-        <div className="flex-1 min-w-[250px] flex">
-          <ProjectCard
-            title="Portfolio"
-            main="The project which you are viewing right now😊!"
-            imgSrc={portfolioImg}
-          />
-        </div>
+
+      {/* Grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {projects.map((proj, index) => (
+          <ProjectCard key={index} {...proj} />
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 

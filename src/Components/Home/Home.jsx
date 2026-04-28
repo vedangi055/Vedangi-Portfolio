@@ -5,40 +5,60 @@ import resume from "../../assets/Resume.pdf";
 
 const Home = () => {
   return (
-    <div className="text-white flex w-full justify-between items-start p-10 md:p-20">
-      <div className="md:w-2/4 md:pt-10 ">
-        <h1 className="text-xl md:text-6xl font-bold flex leading-normal tracking-tighter">
+    <section className="relative w-full min-h-screen flex items-center justify-between px-6 md:px-20 py-16 bg-gradient-to-b from-black via-slate-900 to-slate-950 text-white overflow-hidden">
+      {/* Glow Background Effect */}
+      <div className="absolute top-20 left-10 w-72 h-72 bg-sky-500/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
+
+      {/* Left Content */}
+      <div className="z-10 md:w-1/2 space-y-6">
+        {/* Heading */}
+        <h1 className="text-3xl md:text-6xl font-bold leading-tight tracking-tight">
           <TextChange />
         </h1>
-        <p
-          className="text-sm md:text-2xl tracking-tight"
-          style={{ marginTop: "10px", fontFamily: "serif", color: "darkslateblue" }}
-        >
-          Thanks for stopping by! 
-          This portfolio is a glimpse into my work, skills, and interests. I’d love to connect, collaborate, or discuss new opportunities---always open to learning and sharing ideas.
+
+        {/* Subtext */}
+        <p className="text-sm md:text-lg text-gray-300 max-w-xl leading-relaxed">
+          Thanks for stopping by! This portfolio showcases my work, skills, and
+          interests. I’m always open to collaborating, learning, and building
+          impactful solutions.
         </p>
 
-        <div className="mt-6 flex space-x-4">
+        {/* CTA Buttons */}
+        <div className="flex flex-wrap gap-4 pt-4">
           <a
             href="#Footer"
-            className="sm:w-1/2 md:w-1/3 inline-block bg-gradient-to-r from-blue-900 via-blue-800 to-blue-600 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out hover:bg-purple-700 hover:shadow-lg text-center"
+            className="px-6 py-3 rounded-full bg-gradient-to-r from-sky-500 to-blue-600 
+            text-white font-medium shadow-md hover:scale-105 hover:shadow-sky-500/30 
+            transition-all duration-300"
           >
             Contact Me
           </a>
+
           <a
             href={resume}
             target="_blank"
             rel="noopener noreferrer"
-            className="sm:w-1/2 md:w-1/3 inline-block bg-gradient-to-r from-purple-600 via-purple-500 to-purple-400 text-white font-bold py-3 px-6 rounded-full transition duration-300 ease-in-out hover:bg-blue-700 hover:shadow-lg ml-5 text-center"
+            className="px-6 py-3 rounded-full border border-white/20 
+            backdrop-blur-md bg-white/5 text-white font-medium 
+            hover:bg-white/10 hover:scale-105 transition-all duration-300"
           >
             Download Resume
           </a>
         </div>
       </div>
-      <div>
-        <img className="" src={image} alt="" />
+
+      {/* Right Image */}
+      <div className="hidden md:flex justify-center items-center w-1/2 relative">
+        <div className="absolute w-80 h-80 bg-sky-500/10 blur-3xl rounded-full"></div>
+
+        <img
+          src={image}
+          alt="coding illustration"
+          className="relative w-[350px] md:w-[450px] drop-shadow-[0_0_25px_rgba(56,189,248,0.3)]"
+        />
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,61 +1,57 @@
 import React from "react";
-import CertificationsCard from "../Certifications/CertificationsCard";
+import CertificationsCard from "./CertificationsCard";
+
 const Certifications = () => {
+  const certifications = [
+    {
+      title: "Next.js Web Dev: Master this Powerful React Framework",
+      source: "Udemy",
+      link: "https://www.udemy.com/certificate/UC-ea29fd69-7ef3-40e8-8ced-58649f8c67f9/",
+    },
+    {
+      title: "The Ultimate React Course 2023: React, Redux",
+      source: "Udemy",
+      link: "https://udemy-certificate.s3.amazonaws.com/image/UC-129af3fb-5f4a-490b-9f70-95233d8c3a1c.jpg",
+    },
+    {
+      title: "Modern JavaScript Bootcamp",
+      source: "Udemy",
+      link: "https://www.udemy.com/certificate/UC-a1e22f85-99bb-4e25-98b8-f07189049a6d/",
+    },
+    {
+      title: "Power BI Data Visualization",
+      source: "Great Learning",
+      link: "https://olympus.mygreatlearning.com/courses/30824/certificate?pb_id=581",
+    },
+    {
+      title: "JavaScript (Basic)",
+      source: "HackerRank",
+      link: "https://www.hackerrank.com/certificates/8304b2ae87bf",
+    },
+    {
+      title: "React.js (Basic)",
+      source: "HackerRank",
+      link: "https://www.hackerrank.com/certificates/b8cd7f452ed1",
+    },
+  ];
+
   return (
-    <div
+    <section
       id="Certifications"
-      className="p-10 md:p-20 bg-blue-600 shadow-xl mx-0 md:mx-20 bg-opacity-30 rounded-lg p-12 mt-10"
+      className="py-16 px-6 md:px-20 bg-gradient-to-b from-black via-slate-900 to-slate-950 text-white"
     >
-      <h1 className="text-2xl md:text-4xl text-green-200 font-bold font-mono mb-6 hover:text-sky-800 duration-100 hover:drop-shadow-[0_0_25px_rgba(0,191,255,1.5)]">
-        CERTIFICATIONS
+      {/* Heading */}
+      <h1 className="text-3xl md:text-5xl font-bold mb-10">
+        Certifications
       </h1>
-      {/* Horizontal scrolling container */}
-      <div className="flex gap-6 overflow-x-auto">
-        {/* Individual Certification Cards */}
-        <CertificationsCard
-          title="Next.js Web Dev: Master this Powerful React Framework"
-          source="Udemy"
-          certificateLink="https://www.udemy.com/certificate/UC-ea29fd69-7ef3-40e8-8ced-58649f8c67f9/"
-          iconColor="#4285F4"
-        />
-        <CertificationsCard
-          title="The Ultimate React Course 2023: React, Redux"
-          source="Udemy"
-          certificateLink="https://udemy-certificate.s3.amazonaws.com/image/UC-129af3fb-5f4a-490b-9f70-95233d8c3a1c.jpg"
-          iconColor="#34D399"
-        />
-        <CertificationsCard
-          title="The Modern JavaScript Bootcamp"
-          source="Udemy"
-          certificateLink="https://www.udemy.com/certificate/UC-a1e22f85-99bb-4e25-98b8-f07189049a6d/"
-          iconColor="#FBBF24"
-        />
-        <CertificationsCard
-          title="Analyzing and Visualizing Data with Microsoft Power BI"
-          source="Great Learning"
-          certificateLink="https://olympus.mygreatlearning.com/courses/30824/certificate?pb_id=581"
-          iconColor="#34D399"
-        />
-        <CertificationsCard
-          title="JavaScript (Basic)"
-          source="HackerRank"
-          certificateLink="https://www.hackerrank.com/certificates/8304b2ae87bf"
-          iconColor="#34D399"
-        />
-        <CertificationsCard
-          title="React.js (Basic)"
-          source="HackerRank"
-          certificateLink="https://www.hackerrank.com/certificates/b8cd7f452ed1"
-          iconColor="#4285F4"
-        />
-        <CertificationsCard
-          title="A Gentle Introduction to ASP.NET"
-          source="Udemy"
-          certificateLink="https://www.udemy.com/certificate/UC-30f211fa-75c7-4031-a64a-58822fc3912f/"
-          iconColor="#EF4444"
-        />
+
+      {/* Scroll Container */}
+      <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-slate-700">
+        {certifications.map((cert, index) => (
+          <CertificationsCard key={index} {...cert} />
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 

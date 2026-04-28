@@ -4,84 +4,111 @@ import AboutImg from "../../assets/7358653-removebg-preview.png";
 
 const About = () => {
   return (
-    <div
+    <section
       id="About"
-      className="relative text-white flex flex-col md:flex-row items-center bg-white/10 backdrop-blur-md shadow-lg mx-0 md:mx-10 rounded-2xl p-8 md:p-12 border border-white/20 overflow-hidden"
+      className="relative py-16 px-6 md:px-20 bg-gradient-to-b from-slate-950 via-slate-900 to-black text-white overflow-hidden"
     >
-      {/* Gradient Border Glow */}
-      <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-purple-400/40 via-pink-400/40 to-blue-400/40 [mask-image:linear-gradient(white,transparent,white)]"></div>
+      {/* Glow Background */}
+      <div className="absolute top-10 left-10 w-72 h-72 bg-purple-500/20 blur-3xl rounded-full"></div>
+      <div className="absolute bottom-10 right-10 w-72 h-72 bg-sky-500/20 blur-3xl rounded-full"></div>
 
       {/* Heading */}
       <motion.h2
-        className="absolute top-6 left-6 text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-600
- font-sans"
-        initial={{ x: -50, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.7 }}
+        className="text-3xl md:text-5xl font-bold mb-12"
+        initial={{ y: -30, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
       >
-        ABOUT
+        About Me
       </motion.h2>
 
-      {/* Image */}
-      <motion.img
-        className="h-64 md:h-80 md:w-1/3 w-full object-cover rounded-lg 
-             shadow-[0_0_15px_rgba(56,189,248,0.4)] 
-             hover:scale-105 transition-transform duration-300"
-        src={AboutImg}
-        alt="Vedangi - Frontend Developer from Goa"
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        loading="lazy"
-      />
-
-      {/* Text Content */}
-      <motion.div
-        className="md:w-2/3 w-full md:pl-10 mt-6 md:mt-0 relative z-10"
-        initial={{ y: 40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-      >
-        <p
-          className="text-lg md:text-xl leading-relaxed"
-          style={{ fontStyle: "oblique" }}
+      {/* Content */}
+      <div className="flex flex-col md:flex-row items-center gap-10">
+        {/* Image */}
+        <motion.div
+          className="md:w-1/3 w-full flex justify-center"
+          initial={{ scale: 0.9, opacity: 0 }}
+          whileInView={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.7 }}
         >
-          Hi, I'm <span className="font-semibold text-purple-200">Vedangi</span>
-          , a{" "}
-          <span className="font-semibold text-blue-900">
-            Frontend Developer
-          </span>{" "}
-          from Goa with <span className="font-semibold">2+ years</span> of
-          experience specializing in React.js. <br />
-          <br />I build responsive, user-friendly web applications with
-          expertise in{" "}
-          <span className="underline decoration-purple-800">
-            JavaScript
-          </span>,{" "}
-          <span className="underline decoration-blue-800">Tailwind CSS</span>,
-          and{" "}
-          <span className="underline decoration-pink-800">API integration</span>
-          . <br />
-          <br />I also create interactive dashboards in{" "}
-          <span className="font-semibold text-yellow-200">Power BI</span>,
-          turning data into meaningful insights. Passionate about solving
-          challenges, crafting smooth user experiences, and exploring new
-          technologies that make the web more engaging.
-        </p>
+          <img
+            src={AboutImg}
+            alt="Vedangi - Frontend Developer & Aspiring Project Manager"
+            className="w-[280px] md:w-[350px] 
+            drop-shadow-[0_0_25px_rgba(139,92,246,0.4)] 
+            hover:scale-105 transition duration-300"
+          />
+        </motion.div>
 
-        {/* CTA Button */}
-        {/* <div className="mt-6">
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-semibold shadow-lg hover:shadow-purple-500/50 transition-all"
-          >
-            Let’s Connect 🚀
-          </motion.a>
-        </div> */}
-      </motion.div>
-    </div>
+        {/* Text */}
+        <motion.div
+          className="md:w-2/3 text-gray-300 text-base md:text-lg leading-relaxed space-y-4"
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.7 }}
+        >
+          <p>
+            Hi, I’m <span className="text-white font-semibold">Vedangi</span>, a{" "}
+            <span className="text-sky-400 font-medium">
+              Frontend Developer transitioning into Project Management
+            </span>{" "}
+            with 2+ years of experience building and delivering web
+            applications.
+          </p>
+
+          <p>
+            I specialize in <span className="text-white">React.js</span>,{" "}
+            <span className="text-white">JavaScript</span>, and{" "}
+            <span className="text-white">Tailwind CSS</span>, creating
+            responsive and user-focused interfaces with clean architecture and
+            smooth user experience.
+          </p>
+
+          <p>
+            Beyond development, I actively contribute to{" "}
+            <span className="text-purple-300">
+              planning, coordination, and workflow improvement
+            </span>
+            — collaborating with teams, structuring tasks, and ensuring
+            efficient delivery of features.
+          </p>
+
+          <p>
+            I enjoy bridging the gap between{" "}
+            <span className="text-sky-300">technical execution</span> and{" "}
+            <span className="text-sky-300">business goals</span>, focusing on
+            building impactful products while improving team efficiency and
+            communication.
+          </p>
+
+          <p>
+            I also work with <span className="text-yellow-300">Power BI</span>{" "}
+            to create dashboards that transform data into meaningful insights
+            for better decision-making.
+          </p>
+
+          {/* Growth Statement */}
+          <p className="text-sm text-gray-400">
+            Currently expanding my skills in Agile methodologies, stakeholder
+            communication, and project lifecycle management.
+          </p>
+
+          {/* CTA */}
+          <div className="pt-4">
+            <a
+              href="#Footer"
+              className="inline-block px-6 py-2.5 rounded-full 
+              bg-gradient-to-r from-purple-500 to-sky-500 
+              text-white font-medium shadow-md 
+              hover:scale-105 hover:shadow-purple-500/30 
+              transition-all duration-300"
+            >
+              Let’s Connect →
+            </a>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 

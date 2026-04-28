@@ -2,104 +2,69 @@ import React, { useState } from "react";
 import { FaSnowflake } from "react-icons/fa";
 
 const Navbar = () => {
-  const [isHovered, setIsHovered] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <nav className="flex flex-wrap justify-between md:items-center text-white px-10 pt-6 md:px-20">
-      {/* <img src="src/assets/logo.png" className="w-16 h-12" alt="VEDANGI" /> */}
-      <FaSnowflake className="w-8 h-8 text-white" />
+    <nav
+      className="fixed w-full z-50 px-6 md:px-20 py-4 
+    bg-white/5 backdrop-blur-lg border-b border-white/10 flex justify-between items-center"
+    >
+      {/* Logo */}
+      <div className="flex items-center gap-2 text-white font-semibold text-lg tracking-wide">
+        <FaSnowflake className="text-sky-400" />
+        {/* Vedangi */}
+      </div>
 
-      {/* Hamburger Icon for small screens */}
-      <button
-        className="md:hidden text-white z-20"
-        onClick={toggleMenu}
-        aria-label="Toggle Menu"
-      >
-        {/* Conditional rendering of Hamburger or Cross icon */}
-        {isMenuOpen ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        )}
-      </button>
-
-      {/* Menu items for smaller screens */}
-      <ul
-        className={`${
-          isMenuOpen ? "block" : "hidden"
-        } md:flex flex-wrap gap-6 md:space-y-0 space-y-5 md:static md:mx-0 md:px-0 transition-all duration-300 ease-in-out absolute top-20 right-5 bg-gray-800 md:bg-transparent bg-opacity-50 md:bg-opacity-0 rounded-md shadow-lg z-10 py-3 px-2`}
-      >
+      {/* Desktop Menu */}
+      <ul className="hidden md:flex items-center gap-8 text-sm text-gray-300">
         <li>
-          <a
-            href="#About"
-            className="bg-gray-800 bg-opacity-30 p-2 rounded-md transition duration-100 ease-in-out hover:shadow-lg hover:shadow-orange-100"
-          >
+          <a href="#About" className="hover:text-white transition duration-300">
             About
           </a>
         </li>
 
+        {/* Dropdown */}
         <li
-          className="relative group"
+          className="relative"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          <a className="bg-gray-800 bg-opacity-20 p-2 rounded-md transition duration-300 ease-in-out hover:shadow-lg hover:shadow-orange-100">
+          <span className="cursor-pointer hover:text-white transition duration-300">
             Experience
-          </a>
-          {isHovered && (
-            <ul className="absolute left-0 mt-2 bg-gray-800 bg-opacity-50 rounded-md shadow-lg z-10">
-              <li className="p-2 hover:bg-gray-700 transition duration-200">
-                <a href="#WorkExperience" className="text-white">
-                  Work Experience
-                </a>
-              </li>
-              <li className="p-2 hover:bg-gray-700 transition duration-200">
-                <a href="#Internships" className="text-white">
-                  Internships
-                </a>
-              </li>
-              <li className="p-2 hover:bg-gray-700 transition duration-200">
-                <a href="#Certifications" className="text-white">
-                  Certifications
-                </a>
-              </li>
-            </ul>
-          )}
+          </span>
+
+          <div
+            className={`absolute top-6 left-0 w-48 rounded-lg 
+    bg-white/5 backdrop-blur-lg border border-white/10 
+    shadow-lg p-2 space-y-1 transition-all duration-200
+    ${isHovered ? "opacity-100 visible" : "opacity-0 invisible"}`}
+          >
+            <a
+              href="#WorkExperience"
+              className="block px-3 py-2 rounded-md hover:bg-white/10"
+            >
+              Work Experience
+            </a>
+            <a
+              href="#Internships"
+              className="block px-3 py-2 rounded-md hover:bg-white/10"
+            >
+              Internships
+            </a>
+            <a
+              href="#Certifications"
+              className="block px-3 py-2 rounded-md hover:bg-white/10"
+            >
+              Certifications
+            </a>
+          </div>
         </li>
 
         <li>
           <a
             href="#Projects"
-            className="bg-gray-800 bg-opacity-20 p-2 rounded-md transition duration-300 ease-in-out hover:shadow-lg hover:shadow-orange-100"
+            className="hover:text-white transition duration-300"
           >
             Projects
           </a>
@@ -108,12 +73,59 @@ const Navbar = () => {
         <li>
           <a
             href="#Footer"
-            className="bg-gray-800 bg-opacity-20 p-2 rounded-md transition duration-300 ease-in-out hover:shadow-lg hover:shadow-orange-100"
+            className="hover:text-white transition duration-300"
           >
             Contact
           </a>
         </li>
       </ul>
+
+      {/* Mobile Toggle */}
+      <button
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="md:hidden text-white z-50"
+        aria-label="Toggle Menu"
+      >
+        {isMenuOpen ? (
+          <span className="text-xl">✕</span>
+        ) : (
+          <span className="text-xl">☰</span>
+        )}
+      </button>
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed top-0 right-0 h-full w-64 bg-black/80 backdrop-blur-lg 
+        border-l border-white/10 transform ${
+          isMenuOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 md:hidden p-6`}
+      >
+        <ul className="flex flex-col gap-6 text-gray-300 mt-10">
+          <a href="#About" onClick={() => setIsMenuOpen(false)}>
+            About
+          </a>
+
+          <a href="#WorkExperience" onClick={() => setIsMenuOpen(false)}>
+            Work Experience
+          </a>
+
+          <a href="#Internships" onClick={() => setIsMenuOpen(false)}>
+            Internships
+          </a>
+
+          <a href="#Certifications" onClick={() => setIsMenuOpen(false)}>
+            Certifications
+          </a>
+
+          <a href="#Projects" onClick={() => setIsMenuOpen(false)}>
+            Projects
+          </a>
+
+          <a href="#Footer" onClick={() => setIsMenuOpen(false)}>
+            Contact
+          </a>
+        </ul>
+      </div>
     </nav>
   );
 };

@@ -1,55 +1,67 @@
 import React, { useState, useEffect } from "react";
 
 const TextChange = () => {
-  const texts = ["Hi, I'm Vedangi", "Hi, I'm Vedangi", "Hi, I'm Vedangi"];
-  const [currentText, setCurrentText] = useState("");
-  const [endValue, setEndValue] = useState(1);
-  const [isForward, setIsForward] = useState(true);
-  const [index, setIndex] = useState(0);
+  const texts = [
+    "Hi, I'm Vedangi Barve",
+    "Frontend Developer",
+    "Aspiring Project Manager",
+    "Bridging Tech and Business",
+    "Building Products, Not Just Features",
+  ];
+
+  const [textIndex, setTextIndex] = useState(0);
+  const [displayText, setDisplayText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentText(texts[index].substring(0, endValue));
-      if (isForward) {
-        setEndValue((prev) => prev + 1);
+    const current = texts[textIndex];
+    let typingSpeed = isDeleting ? 40 : 80;
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        setDisplayText(current.substring(0, displayText.length + 1));
       } else {
-        setEndValue((prev) => prev - 1);
+        setDisplayText(current.substring(0, displayText.length - 1));
       }
-      if (endValue > texts[index].length + 10) {
-        setIsForward(false);
-      }
-      if (endValue < 2.1) {
-        setIsForward(true);
-        setIndex((prev) => (prev + 1) % texts.length); // Loop through texts
-      }
-    }, 100);
 
-    return () => clearInterval(intervalId);
-  }, [endValue, isForward, index, texts]);
+      // When typing is complete
+      if (!isDeleting && displayText === current) {
+        setTimeout(() => setIsDeleting(true), 1000); // pause
+      }
 
-  // Function to color 'Vedangi' while being typed
+      // When deleting is complete
+      if (isDeleting && displayText === "") {
+        setIsDeleting(false);
+        setTextIndex((prev) => (prev + 1) % texts.length);
+      }
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, textIndex]);
+
+  // Highlight "Vedangi"
   const renderText = (text) => {
-    const vedangiStart = text.indexOf("Vedangi");
+    const fullName = "Vedangi Barve";
 
-    if (vedangiStart !== -1) {
-      const beforeVedangi = text.substring(0, vedangiStart);
-      const vedangi = text.substring(vedangiStart, vedangiStart + 7); // length of 'Vedangi' is 7 characters
-      const afterVedangi = text.substring(vedangiStart + 7);
-
+    if (text.includes(fullName)) {
+      const parts = text.split(fullName);
       return (
         <>
-          {beforeVedangi}
-          <span className="text-cyan-800">{vedangi}</span> {/* Change color here */}
-          {afterVedangi}
+          {parts[0]}
+          <span className="text-sky-400">{fullName}</span>
+          {parts[1]}
         </>
       );
     }
 
-    return text; // return the text if 'Vedangi' isn't found
+    return text;
   };
 
   return (
-    <div className="transition ease duration-300">{renderText(currentText)}</div>
+    <span className="inline-block">
+      {renderText(displayText)}
+      <span className="ml-1 animate-pulse">|</span>
+    </span>
   );
 };
 
