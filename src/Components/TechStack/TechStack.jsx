@@ -1,19 +1,42 @@
 import React from "react";
-import { FaCss3, FaHtml5, FaJs, FaReact } from "react-icons/fa";
+import {
+  FaReact,
+  FaJs,
+  FaHtml5,
+  FaCss3,
+  FaNodeJs,
+  FaGitAlt,
+} from "react-icons/fa";
+
+import {
+  SiTailwindcss,
+  SiExpress,
+  SiPostman,
+  SiPowerbi,
+  SiDotnet,
+} from "react-icons/si";
 
 const TechStack = () => {
   const techCategories = [
     {
       title: "Frontend",
-      skills: ["React.js", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"],
+      skills: [
+        <FaReact />,
+        <FaJs />,
+        <FaHtml5 />,
+        <FaCss3 />,
+        <SiTailwindcss />,
+      ],
     },
+
     {
       title: "Backend",
-      skills: ["Node.js", "Express.js", "ASP.NET"],
+      skills: [<FaNodeJs />, <SiExpress />, <SiDotnet />],
     },
+
     {
       title: "Tools & Platforms",
-      skills: ["Git", "Postman", "Power BI"],
+      skills: [<FaGitAlt />, <SiPostman />, <SiPowerbi />],
     },
   ];
 
@@ -30,24 +53,40 @@ const TechStack = () => {
         {techCategories.map((category, index) => (
           <div
             key={index}
-            className="bg-white/5 backdrop-blur-lg border border-white/10 
-            rounded-xl p-6 hover:bg-white/10 transition duration-300"
+            className="
+              bg-white/5 backdrop-blur-lg
+              border border-white/10
+              rounded-2xl p-6
+              hover:bg-white/10
+              hover:border-sky-400/30
+              transition-all duration-300
+            "
           >
-            <h2 className="text-xl font-semibold mb-4 text-sky-400">
+            {/* Category Title */}
+            <h2 className="text-2xl font-semibold mb-6 text-sky-400">
               {category.title}
             </h2>
 
-            <div className="flex flex-wrap gap-2">
-              {category.skills.map((skill, i) => (
-                <span
+            {/* Icons */}
+            <div className="flex flex-wrap gap-5">
+              {category.skills.map((icon, i) => (
+                <div
                   key={i}
-                  className="px-3 py-1 text-sm rounded-md 
-                  bg-slate-800/80 border border-slate-700 
-                  text-gray-300 hover:text-white hover:border-sky-400 
-                  transition duration-300"
+                  className="
+                    w-16 h-16
+                    flex items-center justify-center
+                    rounded-2xl
+                    bg-slate-800/70
+                    border border-slate-700
+                    text-3xl text-sky-400
+                    hover:scale-110
+                    hover:border-sky-400
+                    hover:shadow-[0_0_20px_rgba(56,189,248,0.4)]
+                    transition-all duration-300
+                  "
                 >
-                  {skill}
-                </span>
+                  {icon}
+                </div>
               ))}
             </div>
           </div>

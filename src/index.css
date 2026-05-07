@@ -5,3 +5,14 @@
 * {
   scroll-behavior: smooth;
 }
+
+/* body {
+  cursor: url("/cursor.png"), auto;
+} */
+
+* {
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="24" viewBox="0 0 24 24"><path fill="white" d="M22 11c-4.96 0-9-4.04-9-9c0-1.32-2-1.32-2 0c0 4.96-4.04 9-9 9c-1.32 0-1.32 2 0 2c4.96 0 9 4.04 9 9c0 1.32 2 1.32 2 0c0-4.96 4.04-9 9-9c1.32 0 1.32-2 0-2Z"/></svg>')
+      24 24,
+    auto !important;
+}
